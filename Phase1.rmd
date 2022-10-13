@@ -1,0 +1,51 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
+```{r}
+library(readr)
+ames_student_1_ <- read_csv("~/Downloads/ames_student (1).csv")
+
+library(tidyverse)
+library(dplyr)
+```
+
+```{r}
+library(readr)
+ames_student_1_ <- read_csv("~/Downloads/ames_student (1).csv", 
+    col_types = cols(Neighborhood = col_factor(levels = c())))
+```
+
+
+```{r}
+ggplot(ames_student_1_, aes(x=Above_Median,y=Neighborhood))+
+  geom_point() 
+```
+
+
+```{r}
+ggplot(aes(x=Full_Bath,y=Above_Median),data=ames_student_1_)+
+  geom_line()
+```
+
+```{r}
+ggplot(aes(x=Above_Median,y=Year_Built),data=ames_student_1_)+
+geom_boxplot()
+```
+
+
+```{r}
+ggplot(ames_student_1_, aes(x=Above_Median,y=Lot_Area))+
+  geom_col() 
+```
+
+```{r}
+ggplot(aes(x=Above_Median,y=Garage_Cars),data=ames_student_1_)+
+  geom_boxplot()
+```
+
+
+```
+
+
